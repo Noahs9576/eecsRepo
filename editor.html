@@ -5,6 +5,7 @@
   <title> Editor </title>
   <link rel="stylesheet" type="text/css" href="editor.css" title="style" />
   <script src="editor.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -14,15 +15,113 @@
         </h1>
     </header>
 
-    <div>
-        <select name="Font Style" id="style">Select Font</select>
-            <option value="Calibri">Calibri</option>
-            <option value="Time New Roman">Time New Roman</option>
-        </select>
-
-        <select name="Font Size" id="size" value="12">12</select>
+    <div class = "action-header">
+        <div class = "option-container">
+            <select name="Font Style" id="style" class = "default-button" onchange ="SetStyle(this)">Select Font
+                <option selected value="Calibri">Calibri</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Arial">Arial</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Impact">Impact</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Lucida Console">Lucida Console</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Brush Script MT">Brush Script MT</option>
+                <option value="Lucida Handwriting">Lucida Handwriting</option>
+                <option value="Monotype Corsiva">Monotype Corsiva</option>
+                <option value="Garamond">Garamond</option>
+            </select>
+                
+            <select name="Font Color" id="color" class = "default-button" onchange ="SetColor(this)">Select Color
+                <option value="Black">Black</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+            </select>
+    
+            <select name="Font Size" id="size" class = "default-button" onchange ="SetSize(this)">Select Size
+                <option value="8">8</option>
+                <option value="9">10</option>
+                <option value="10">10</option>
+                <option selected value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+                <option value="22">22</option>
+                <option value="24">24</option>
+                <option value="26">26</option>
+                <option value="28">28</option>
+                <option value="30">30</option>
+                <option value="32">32</option>
+                <option value="34">34</option>
+                <option value="36">36</option>
+                <option value="38">38</option>
+                <option value="40">40</option>
+                <option value="42">42</option>
+                <option value="44">44</option>
+                <option value="46">46</option>
+                <option value="48">48</option>
+                <option value="50">50</option>
+                <option value="52">52</option>
+                <option value="54">54</option>
+                <option value="56">56</option>
+                <option value="58">58</option>
+                <option value="60">60</option>
+                <option value="62">62</option>
+                <option value="64">64</option>
+                <option value="66">66</option>
+                <option value="68">68</option>
+                <option value="70">70</option>
+                <option value="72">72</option>
+                <option value="74">74</option>
+                <option value="76">76</option>
+                <option value="78">78</option>
+                <option value="80">80</option>
+                <option value="82">82</option>
+                <option value="84">84</option>
+                <option value="86">86</option>
+                <option value="88">88</option>
+                <option value="90">90</option>
+                <option value="92">92</option>
+                <option value="94">94</option>
+                <option value="96">96</option>
+                <option value="98">98</option>
+                <option value="100">100</option>
+                
+            </select>
+    
+            <button id="bold" class = "default-button" onclick="SetBold()">Bold</button>
+            <button id="italic" class = "default-button" onclick="SetItalic()">Italic</button>
+            <button id="underline" class = "default-button" onclick="SetUnderline()">Underline</button>
+            <button id="strike" class = "default-button" onclick="SetStrike()">Strike</button>
+            <button id="left" class = "default-button" onclick="SetLeft()">Left</button>
+            <button id="center" class = "default-button" onclick="SetCenter()">Center</button>
+            <button id="right" class = "default-button" onclick="SetRight()">Right</button>
             
-        
+        </div>
+        <div class = "action-container">
+            <button id="save" class = "default-button save-button">Save</button>
+            <button id="import" class = "default-button import-button">Import</button>
+            <button id="clear" class = "default-button clear-button">Clear</button>
+        </div>
+
     </div>
 
+    
+
+    <div class = "text-wrapper">
+        <textarea id="text" rows="58" cols="100"></textarea>
+    </div>
+
+    <footer>
+        <p>
+            &copy; 2019
+        </p>
+    </footer>
+
 </body>
+</html>
