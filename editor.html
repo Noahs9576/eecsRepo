@@ -17,7 +17,7 @@
 
     <div class = "action-header">
         <div class = "option-container">
-            <select name="Font Style" id="style" class = "default-button" onchange ="SetStyle(this)">Select Font
+            <select name="Font Style" id="style" class = "default-option" onchange ="SetStyle(this)">Select Font
                 <option selected value="Calibri">Calibri</option>
                 <option value="Times New Roman">Times New Roman</option>
                 <option value="Arial">Arial</option>
@@ -33,16 +33,36 @@
                 <option value="Lucida Handwriting">Lucida Handwriting</option>
                 <option value="Monotype Corsiva">Monotype Corsiva</option>
                 <option value="Garamond">Garamond</option>
+                <option value="Bookman Old Style">Bookman Old Style</option>
+                <option value="Palatino Linotype">Palatino Linotype</option>
+                <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+                <option value="MS Serif">MS Serif</option>
+                <option value="MS Sans Serif">MS Sans Serif</option>
+                <option value="Symbol">Symbol</option>
+                <option value="Webdings">Webdings</option>
+                <option value="Wingdings">Wingdings</option>
+                <option value="Wingdings 2">Wingdings 2</option>
+                <option value="Wingdings 3">Wingdings 3</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="Arial Narrow">Arial Narrow</option>
             </select>
-                
-            <select name="Font Color" id="color" class = "default-button" onchange ="SetColor(this)">Select Color
+
+            <select name="Font Color" id="color" class = "default-option" onchange ="SetColor(this)">Select Color
                 <option value="Black">Black</option>
                 <option value="Red">Red</option>
                 <option value="Blue">Blue</option>
                 <option value="Green">Green</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Orange">Orange</option>
+                <option value="Purple">Purple</option>
+                <option value="Pink">Pink</option>
+                <option value="Brown">Brown</option>
+                <option value="White">White</option>
+                <option value="Gray">Gray</option>
+                <option value="Silver">Silver</option>
             </select>
-    
-            <select name="Font Size" id="size" class = "default-button" onchange ="SetSize(this)">Select Size
+
+            <select name="Font Size" id="size" class = "default-option" onchange ="SetSize(this)">Select Size
                 <option value="8">8</option>
                 <option value="9">10</option>
                 <option value="10">10</option>
@@ -91,37 +111,40 @@
                 <option value="96">96</option>
                 <option value="98">98</option>
                 <option value="100">100</option>
-                
+
             </select>
-    
-            <button id="bold" class = "default-button" onclick="SetBold()">Bold</button>
-            <button id="italic" class = "default-button" onclick="SetItalic()">Italic</button>
-            <button id="underline" class = "default-button" onclick="SetUnderline()">Underline</button>
-            <button id="strike" class = "default-button" onclick="SetStrike()">Strike</button>
+
+            <button id="bold" class = "default-button" onclick="ToggleBold()">Bold</button>
+            <button id="italic" class = "default-button" onclick="ToggleItalic()">Italic</button>
+            <button id="underline" class = "default-button" onclick="ToggleUnderline()">Underline</button>
+            <button id="strike" class = "default-button" onclick="ToggleStrike()">Strike</button>
             <button id="left" class = "default-button" onclick="SetLeft()">Left</button>
             <button id="center" class = "default-button" onclick="SetCenter()">Center</button>
             <button id="right" class = "default-button" onclick="SetRight()">Right</button>
-            
+
         </div>
         <div class = "action-container">
-            <button id="save" class = "default-button save-button">Save</button>
+            <button id ="edit" class = "default-button edit-button save-button" onclick="ToggleEdit(this)">Edit</button>
+            <!-- <button id="save" class = "default-button save-button">Save</button> -->
             <button id="import" class = "default-button import-button">Import</button>
-            <button id="clear" class = "default-button clear-button">Clear</button>
+            <button id="upload" class = "default-button upload-button">Upload</button>
         </div>
 
     </div>
 
-    
+
 
     <div class = "text-wrapper">
-        <textarea id="text" rows="58" cols="100"></textarea>
+        <!-- <textarea id="text" rows="58" cols="100"></textarea> -->
+        <h1 class = "header" onclick = "StartEdit(this)">Template Header</h1>
+        <p class = "paragraph" onclick = "StartEdit(this)">Template Paragraph</p>
     </div>
 
-    <footer>
+    <!-- <footer>
         <p>
             &copy; 2019
         </p>
-    </footer>
+    </footer> -->
 
 </body>
 </html>
