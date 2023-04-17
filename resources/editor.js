@@ -11,7 +11,8 @@ $(document).ready(function() {
     const document = data[urlParams.get('doc')];
 
     if(!isNil(document)){
-      console.log($('.text-wrapper > .header').text(document.name.text));
+      $('.title').text('Editor- ' + document.name.text);
+
       $('.text-wrapper > .header').text(document.name.text);
       $('.text-wrapper > .header').css('font-family', document.name.fontFamily);
       $('.text-wrapper > .header').css('font-size', document.name.fontSize);
