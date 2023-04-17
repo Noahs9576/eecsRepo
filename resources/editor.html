@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title> Editor </title>
   <link rel="stylesheet" type="text/css" href="editor.css" title="style" />
-  <script src="editor.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="editor.js"></script>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
     <div class = "action-header">
         <div class = "option-container">
-            <select name="Font Style" id="style" class = "default-option" onchange ="SetStyle(this)">Select Font
+            <select name="Font Style" id="style" class = "default-option" onchange ="SetFont(this)">Select Font
                 <option selected value="Calibri">Calibri</option>
                 <option value="Times New Roman">Times New Roman</option>
                 <option value="Arial">Arial</option>
@@ -140,7 +140,7 @@
             <button id ="edit" class = "default-button edit-button save-button" onclick="ToggleEdit(this)">Edit</button>
             <!-- <button id="save" class = "default-button save-button">Save</button> -->
             <button id="import" class = "default-button import-button">Import</button>
-            <button id="upload" class = "default-button upload-button">Upload</button>
+            <button id="upload" class = "default-button upload-button" onclick="UploadDoc()">Upload</button>
         </div>
 
     </div>
@@ -148,9 +148,8 @@
 
 
     <div class = "text-wrapper">
-        <!-- <textarea id="text" rows="58" cols="100"></textarea> -->
         <h1 class = "header" onclick = "StartEdit(this)">Template Header</h1>
-        <p class = "paragraph" onclick = "StartEdit(this)">Template Paragraph</p>
+        <p class = "text" onclick = "StartEdit(this)">Template Paragraph</p>
     </div>
 
     <!-- <footer>

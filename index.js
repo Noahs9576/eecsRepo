@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
+app.use(express.json());
+
 const port = 9000;
+
+var docMap = {};
 
 //localhost:9000
 app.get('/', (req, res) => {
@@ -64,6 +68,14 @@ app.get('/editor.js', (req, res) => {
 
 });
 
+app.post('/upload', (req, res) => {
+    docMap[req.body.name.text] = req.body;
+    res.send("Document uploaded");
+});
+
+app.get('/getDoc', (req, res) => {
+    res.send(docMap);
+});
 
 app.listen(port , () => {
     console.log(`Backend is running on port ${port}`);
