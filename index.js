@@ -4,6 +4,9 @@ app.use(express.json());
 
 const port = 9000;
 
+var username = "admin";
+var password = "admin";
+
 var docMap = {};
 
 //localhost:9000
@@ -75,6 +78,18 @@ app.post('/upload', (req, res) => {
 
 app.get('/getDoc', (req, res) => {
     res.send(docMap);
+});
+
+app.get('/getUserName', (req, res) => {
+    res.send(username);
+    });
+
+app.post('/login', (req, res) => {
+    if (req.body.username == username && req.body.password == password){
+        res.send({success : true});
+    } else {
+        res.send({success : false});
+    }
 });
 
 app.listen(port , () => {

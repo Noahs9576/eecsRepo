@@ -150,6 +150,8 @@ function UploadDoc(){
     },
     body: JSON.stringify(document)
 })
+
+  window.location = '/main.html';
 }
 
 function isNil(object){

@@ -1,4 +1,15 @@
 $( document ).ready(function() {
+    fetch("/getUserName", {
+        method: "GET",
+        headers: {
+            "Content-Type": "plain/text"
+        }
+    }).then(function(response){
+                return response.text();
+    }).then(function(data){
+                $('.user-name').text(data);
+    });
+
     fetch("/getDoc", {
         method: "GET",
         headers: {
