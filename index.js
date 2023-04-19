@@ -6,6 +6,7 @@ const port = 9000;
 
 var username = "admin";
 var password = "admin";
+var answer = "blue";
 
 var docMap = {};
 
@@ -84,11 +85,23 @@ app.get('/getUserName', (req, res) => {
     res.send(username);
     });
 
+app.post('/getPassword', (req, res) => {
+    res.send(password);
+});
+
 app.post('/login', (req, res) => {
     if (req.body.username == username && req.body.password == password){
         res.send({success : true});
     } else {
         res.send({success : false});
+    }
+});
+
+app.post('/forgotPassword', (req, res) => {
+    if (req.body.answer == answer){
+        res.send({success : true , password : password});
+    } else {
+        res.send({success : false , password : password});
     }
 });
 
