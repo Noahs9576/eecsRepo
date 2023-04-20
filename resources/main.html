@@ -13,20 +13,16 @@
 
 <body>
     <header><h2>Documents</h2></header>
-    <nav>
+    <div class="tools">
         <div class="user">
-            <i class="fa-solid fa-user-circle"></i>
-            <p class = 'user-name'>Username</p>
+            <a class=" tool-icon fa-solid fa-user-circle"></a>
+            <p class = 'tool-text user-name'>Username</p>
         </div>
-        <div class="settings">
-            <i class="fa-solid fa-cog"></i>
-            <p>Settings</p>
+        <div class="logout" onclick="Logout()">
+            <a class="tool-icon fa-solid fa-sign-out"></a>
+            <p class="tool-text">Logout</p>
         </div>
-        <div class="logout">
-            <i class="fa-solid fa-sign-out"></i>
-            <p>Logout</p>
-        </div>
-    </nav>
+    </div>
 
     <div class="doc-container">
         <div class="action-container">
